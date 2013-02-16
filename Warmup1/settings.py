@@ -23,8 +23,8 @@ DATABASES = {
     'heroku': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'users',                      # Or path to database file if using sqlite3.
-        'USER': 'postgres',                      # Not used with sqlite3.
-        'PASSWORD': 'PostgresUser12345', #  Not used with sqlite3.
+        'USER': '',                      # Not used with sqlite3.
+        'PASSWORD': '', #  Not used with sqlite3.
         'HOST': 'nztfrggbhsxpgu:hHMO-zD0Lj-anpvLoppANpqBJr@ec2-54-243-184-143.compute-1.amazonaws.com',
         'PORT': '5542',                      # Set to empty string for default. Not used with sqlite3.
     }
