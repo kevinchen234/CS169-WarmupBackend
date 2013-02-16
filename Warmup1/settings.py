@@ -25,8 +25,7 @@ DATABASES = {
         'NAME': 'users',                      # Or path to database file if using sqlite3.
         'USER': 'postgres',                      # Not used with sqlite3.
         'PASSWORD': 'PostgresUser12345', #  Not used with sqlite3.
-      #  http://stackoverflow.com/questions/7695962/postgresql-password-authentication-failed-for-user-postgres
-        'HOST': 'nztfrggbhsxpgu:hHMO-zD0Lj-anpvLoppANpqBJr@ec2-54-243-184-143.compute-1.amazonaws.com',                      # Set to empty string for localhost. Not used with sqlite3.
+        'HOST': 'nztfrggbhsxpgu:hHMO-zD0Lj-anpvLoppANpqBJr@ec2-54-243-184-143.compute-1.amazonaws.com',
         'PORT': '5542',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
@@ -168,4 +167,4 @@ LOGGING = {
 }
 
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+DATABASES['heroku'] =  dj_database_url.config()
