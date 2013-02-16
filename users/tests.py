@@ -1,0 +1,59 @@
+"""
+This file demonstrates writing tests using the unittest module. These will pass
+when you run "manage.py test".
+
+Replace this with more appropriate tests for your application.
+"""
+
+from django.test import TestCase
+from users.models import Users, UserManager
+
+class SimpleTest(TestCase):
+    def test_resetFixture(self):
+        #Test if database is cleared
+        self.assertEquals(Users_user_objects.resetFixture(), 1)
+        
+    def test_loginFail(self):
+        #Test for logging in with user that's not in database
+        self.assertEquals(Users.user_objects.login("add", "add"), -1)
+        
+    def test_successfulAdd(self):
+        #Test for adding user in database
+        self.assertEquals(Users.user_objects.add("add", "add"), 1)
+
+    def test_addFail(self):
+        #Test for adding user not in database
+        Users.user_objects.add("add", "add")
+        self.assertEquals(Users.user_objects.add("add", "add"), -2)
+        
+    def test_successfulLogin(self):
+        #Test for logging in user in database
+        Users.user_objects.add("add", "add")
+        self.assertEquals(Users.user_objects.login("add", "add"), 2)
+        
+    def test_successfulCountIncrease(self):
+        #Test for checking if count increases
+        Users.user_objects.add("add", "add")
+        Users.user_objects.login("add", "add")
+        self.assertEquals(Users.user_objects.login("add", "add"), 3)
+
+        
+    def test_incorrectLogin(self):
+        #Test for logging in incorrectly
+        Users.user_objects.add("add", "add")
+        self.assertEquals(Users.user_objects.login("add", "bcd"), -1)
+        
+    def test_badUsername(self):        
+        #Test for adding user with > 128 characters username
+        self.assertEquals(Users.user_objects.add("CYtEuLuuutZjgQgxpeUZJUWTkOxSnSjMCpbqVlEJYHYdONIZibcTbLvRSTbRazIelzyMDMRciWJSLOXVUxiFnhmozWvQHBBFJgcYmvNeZROTSoLZQHeHYqIIzhwCdvyas", "asdfds"), -3)
+        
+    def test_badPassword(self):
+        #Test for adding user with > 128 character password
+        self.assertEquals(Users.user_objects.add("sdfsdfs", "CYtEuLuuutZjgQgxpeUZJUWTkOxSnSjMCpbqVlEJYHYdONIZibcTbLvRSTbRazIelzyMDMRciWJSLOXVUxiFnhmozWvQHBBFJgcYmvNeZROTSoLZQHeHYqIIzhwCdvyadfss"), -4)
+        
+    def test_clearDatabase(self):        
+        #Retest if database is cleared
+        Users.user_objects.add("add", "add")
+        Users_user_objects.resetFixture()
+        self.assertEquals(Users.user_objects.login("add", "add"), -1)
+    
