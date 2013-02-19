@@ -16,8 +16,8 @@ DATABASES = {
         'USER': 'postgres',                      # Not used with sqlite3.
         'PASSWORD': 'PostgresUser12345', #  Not used with sqlite3.
       #  http://stackoverflow.com/questions/7695962/postgresql-password-authentication-failed-for-user-postgres
-        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '5542',                      # Set to empty string for default. Not used with sqlite3.
     },
     
     'heroku': {
@@ -167,4 +167,4 @@ LOGGING = {
 }
 
 import dj_database_url
-DATABASES['heroku'] =  dj_database_url.config()
+DATABASES['default'] =  dj_database_url.config()
