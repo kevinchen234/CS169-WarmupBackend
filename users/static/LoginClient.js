@@ -16,6 +16,7 @@ function json_request(page, dict, success, failure) {
     });
 }
 
+debug_flag = false;
 
 
 function get_message_for_errcode(code) {
