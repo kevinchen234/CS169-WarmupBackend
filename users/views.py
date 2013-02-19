@@ -8,7 +8,8 @@ from django.views.decorators.csrf import csrf_exempt
 
 from django.test import TestCase
 from django.test.client import Client
-#from users.tests import SimpleTest
+from django.template import RequestContext
+
 import tests
 
 import random
@@ -25,7 +26,7 @@ ERR_BAD_PASSWORD      =  -4
 
 @csrf_exempt        
 def index(request):
-    return render_to_response('client.html')
+    return render_to_response('LoginClient.html', {}, context_instance=RequestContext(request))
 
 @csrf_exempt        
 def login(request):

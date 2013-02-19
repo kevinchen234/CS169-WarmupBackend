@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 # Uncomment the next two lines to enable the admin:
@@ -23,3 +24,4 @@ urlpatterns = patterns('',
     url(r'^TESTAPI/resetFixture$', 'users.views.resetFixture'),
     url(r'^TESTAPI/unitTests$', 'users.views.unitTests'),
 )
+urlpatterns += staticfiles_urlpatterns()

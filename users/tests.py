@@ -11,7 +11,7 @@ from users.models import Users, UserManager
 class SimpleTest(TestCase):
     def test_resetFixture(self):
         #Test if database is cleared
-        self.assertEquals(Users_user_objects.resetFixture(), 1)
+        self.assertEquals(Users.user_objects.resetFixture(), 1)
         
     def test_loginFail(self):
         #Test for logging in with user that's not in database
@@ -54,6 +54,6 @@ class SimpleTest(TestCase):
     def test_clearDatabase(self):        
         #Retest if database is cleared
         Users.user_objects.add("add", "add")
-        Users_user_objects.resetFixture()
+        Users.user_objects.resetFixture()
         self.assertEquals(Users.user_objects.login("add", "add"), -1)
     
