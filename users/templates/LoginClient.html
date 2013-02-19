@@ -63,7 +63,7 @@ function show_login_page(message) {
 function show_welcome_page(user, count) {
    $('#login-page').hide();
    $('#welcome-page').show();
-   $('#welcome-message').html("Welcome "+user+"<br>You have logged in "+count+" times.");
+   $('#welcome-message').html("Welcome "+user+"!" + "<br>You have logged in "+count+" times.");
 }
 
 function handle_login_response(data, user) {
@@ -76,7 +76,7 @@ function handle_login_response(data, user) {
            alert( 'Illegal error code encounted for this state');
         }
      }
-     show_login_page( get_message_for_errcode(data.errCode) );  
+     show_login_page( return_errcode_msg(data.errCode) );  
   }
 }
 
@@ -90,7 +90,7 @@ function handle_add_user_response(data, user) {
            alert( 'Illegal error code encounted for this state');
         }
      }
-     show_login_page( get_message_for_errcode(data.errCode) );  
+     show_login_page( return_errcode_msg(data.errCode) );  
   }
 }
 

@@ -1,17 +1,16 @@
-
 .box {
     width: 300px;
     height: 200px;
-    border: thin black solid;
+    border: thin red double;
     background-color: rgb(243,243,243);
 }
 
 .message {
     margin: 10px 20px 10px 20px;
-    border: thin black solid;
+    border: thin blue solid;
 }
 
 body {
-	font-family: 'Helvetica Neue Light', HelveticaNeue-Light, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: 'Times New Roman', HelveticaNeue-Light, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
