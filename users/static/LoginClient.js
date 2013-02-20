@@ -30,7 +30,7 @@ function return_errcode_msg(msgcode) {
         return ("Your password needs to be at most 128 characters long. Please try again!");
     } else {
         // This case should never happen!
-        if( debug_flag ) { alert('Illegal error code encountered: ' + code); }
-        return ("Unknown error occured: " + code);
+        if( debug_flag ) { alert('Illegal error code encountered: ' + msgcode); }
+        return ("Unknown error occured: " + msgcode);
    }
 }
