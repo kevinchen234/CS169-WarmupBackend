@@ -1,6 +1,6 @@
-ERR_BAD_CREDENTIALS = (-1);
-ERR_USER_EXISTS = (-2);
-ERR_BAD_USERNAME = (-3);
+ERR_BAD_CREDENTIALS = -1;
+ERR_USER_EXISTS = -2;
+ERR_BAD_USERNAME = -3;
 ERR_BAD_PASSWORD  = -4;
 
 
@@ -19,14 +19,14 @@ function json_request(page, dictionary, success, failure) {
 debug_flag = false;
 
 
-function return_errcode_msg(code) {
-    if( code == ERR_BAD_CREDENTIALS) {
+function return_errcode_msg(msgcode) {
+    if( msgcode == ERR_BAD_CREDENTIALS) {
         return ("Invalid username and password combination. Please try again! ");
-    } else if( code == ERR_BAD_USERNAME) {
+    } else if( msgcode == ERR_BAD_USERNAME) {
         return ("The user name should not be empty and at most 128 characters long. Please try again!");
-    } else if( code == ERR_USER_EXISTS) {
+    } else if( msgcode == ERR_USER_EXISTS) {
         return ("This user name already exists. Please try again!");
-    } else if( code == ERR_BAD_PASSWORD) {
+    } else if( msgcode == ERR_BAD_PASSWORD) {
         return ("Your password needs to be at most 128 characters long. Please try again!");
     } else {
         // This case should never happen!
