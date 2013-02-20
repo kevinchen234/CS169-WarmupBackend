@@ -18,6 +18,9 @@
       Password: <input id="login-password" type="password" name="pwd"><br>
       <input id="login-button" type="submit" value="Login">
       <input id="add-user-button" type="submit" value="Add User">
+      
+      <input id="reset-button" type="submit" value="Reset">
+      
     </form>
   </center>
 </div>
@@ -91,6 +94,14 @@ function handling_add_user_response(data, user) {
   }
 }
 
+function handling_reset_response(data) {
+    if ( data.errCode > 0 ) {
+        show_login_page( 'Database Reset has been successful!');
+    } else {
+        show_login_page( 'Database Reset has not been successful! Reason: ' + data.errCode);
+    }
+}
+
 $('#login-button').click(function() {
    username = $('#login-username').val()
    password = $('#login-password').val()
@@ -106,6 +117,14 @@ $('#add-user-button').click(function() {
 
    return false;
 });
+
+
+$('#reset-button').click(function() {
+   json_request("/TESTAPI/resetFixture", {  }, function(data) { return handling_reset_response(data); }, function(err) {alert('error occurred on request'); });
+
+   return false;
+});
+
 
 $('#logout-button').click(function() {
   show_login_page();
