@@ -10,8 +10,8 @@
     border: thin blue solid;
 }
 
-body {
+.body {
 	font-family: 'Times New Roman', Times, serif;
-	font-size: bold;
+	font-style: italic;
 }
 
