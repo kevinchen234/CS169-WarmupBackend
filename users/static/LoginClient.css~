@@ -11,6 +11,6 @@
 }
 
 body {
-	font-family: 'Times New Roman', HelveticaNeue-Light, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: 'Times New Roman', Times, serif;
 }
 
